@@ -22,7 +22,7 @@ things = [
 	Things('Clothes', 200, 150),
 	Things('Moisturizer', 300, 100),
 	Things('Sunscreen', 500, 200),
-	Things('Dildo', 300, 100),
+	Things('Glasses', 300, 100),
 	Things('Card', 200, 50),
 	Things('Esquenta', 500, 105),
 	Things('Nintendo', 1000, 300),
