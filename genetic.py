@@ -2,6 +2,7 @@ from typing import List, Optional, Callable, Tuple
 from random import choices, randint, randrange, random
 from collections import namedtuple
 from functools import partial
+import time
 
 genetics = List[int]
 Pop = List[genetics]
@@ -15,12 +16,22 @@ Things = namedtuple('Thing' , [ 'name' , 'value', 'weight' ])
 things = [
 	Things('Notebook', 500, 2200),
 	Things('Headphones', 150, 160),
-	Things('Dog', 1000, 3000),
+	Things('Dog', 600, 2100),
 	Things('Wallet', 400, 150),
 	Things('Phone', 450, 300),
 	Things('Clothes', 200, 150),
 	Things('Moisturizer', 300, 100),
-	Things('SunScreen Blocker', 500, 200),
+	Things('Sunscreen', 500, 200),
+	Things('Dildo', 300, 100),
+	Things('Card', 200, 50),
+	Things('Esquenta', 500, 105),
+	Things('Nintendo', 1000, 300),
+	Things('Casaco', 500, 500),
+	Things('Computador', 700,400),
+	Things('Tenis', 600, 100),
+	Things('iPad', 300, 300),
+	Things('Book', 150, 500),
+	Things('Jenga', 200, 350)
 ]
 
 def generate_genetics(lenght: int) -> genetics:
@@ -109,27 +120,35 @@ def run_evolution(
 
 	return pop
 
+start = time.time()
 
 population = run_evolution(
-		generate_pop = partial(generate_pop, size = 10, genetics_len = len(things)),
-		fitness_func = partial(fitness, things = things, weight_max = 5000),
+		generate_pop = partial(generate_pop, size = 100, genetics_len = len(things)),
+		fitness_func = partial(fitness, things = things, weight_max = 3000),
 		generation_limit = 100)
+
+end = time.time()
 
 
 x = int(len(population))
 
-for i in range(x):
-	print()
-	z = 0
-	print(genetics_to_string(population[i]))
-	for j in population[i]:
-		if j == 1:
-			print(str(things[z].name) + ' ', end = '')
-			z += 1
-		else:
-			z+= 1
+timecount = end - start
 
 
+print(f"Best solution found - " + genetics_to_string(population[0]))
+
+print(f"Time took to run algorithm - {timecount}s")
+
+print(f"Things to carry in your backpack to get max fitness level:")
+
+z = 0
+things_list = []
+for j in population[0]:
+	if j == 1:
+		things_list += [things[z].name]
+	z += 1
+
+print(things_list)
 
 		
 	
