@@ -31,7 +31,9 @@ things = [
 	Things('Tenis', 600, 100),
 	Things('iPad', 300, 300),
 	Things('Book', 150, 500),
-	Things('Jenga', 200, 350)
+	Things('Jenga', 200, 350),
+	Things('Rafael', 1000, 100),
+	Things('Bumbum', 300, 200)
 ]
 
 def generate_genetics(lenght: int) -> genetics:
