@@ -11,3 +11,11 @@ non-divisible projects or tasks under a fixed budget or time constraint, respect
 
 The knapsack problem has been studied for more than a century, with early works dating as far back as 1897. The name "knapsack problem" dates back to the early works 
 of the mathematician Tobias Dantzig (1884–1956), and refers to the commonplace problem of packing the most valuable or useful items without overloading the luggage.
+
+## How to run the code
+
+```
+git clone https://github.com/guzsoares/Backpack-Genetic-Algorithm
+cd Backpack-Genetic-Algorithm
+python genetic.py
+```
