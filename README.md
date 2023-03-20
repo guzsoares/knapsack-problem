@@ -1,4 +1,3 @@
-# Backpack-Genetic-Algorithm
 This is a solution using a genetic algorithm for the Knapsack problem.
 
 # Knapsack problem
